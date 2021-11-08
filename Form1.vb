@@ -1,12 +1,97 @@
 ﻿Public Class Form1
     'Globala variabler
-    Dim tal1 As Single ' tal 1
-    Dim tal2 As Single ' tal 2
-    Dim resultat As Single ' resultat
+    Dim assign_input As Double = 0  ' Hållare av input
+    Dim operation As String         ' operation för = case
+    Dim found_expression As Boolean = False ' Koll för om räknesätt
 
-    Dim [operator] As Integer ' val av räknesätt för case
-    Dim negativt As Boolean ' för kolla av negativa nummer
+    Private Sub BtnC_Click(sender As Object, e As EventArgs) Handles BtnC.Click
+        ' rensa input box
+        TxtInput.Text = "0"
+    End Sub
 
+    Private Sub BtnAC_Click(sender As Object, e As EventArgs) Handles BtnAC.Click
+        ' rensa alla variabler o boxar
+        TxtInput.Text = "0"
+        lblExpression.Text = ""
+        found_expression = False
+        assign_input = 0
+    End Sub
+
+    ' Hantera alla nummer klick
+    Private Sub num_Click(sender As Object, e As EventArgs) Handles Btn9.Click, Btn8.Click, Btn7.Click, Btn6.Click, Btn5.Click, Btn4.Click, Btn3.Click, Btn2.Click, Btn1.Click, Btn0.Click
+        Dim b As Button = sender
+        If ((TxtInput.Text = "0") Or (found_expression)) Then
+            TxtInput.Clear()
+            TxtInput.Text = b.Text
+            found_expression = False
+        ElseIf (b.Text = ".") Then
+
+            If (Not TxtInput.Text.Contains(".")) Then
+                TxtInput.Text = TxtInput.Text + b.Text
+            End If
+        Else
+            TxtInput.Text = TxtInput.Text + b.Text
+        End If
+    End Sub
+
+    Private Sub operation_Click(sender As Object, e As EventArgs) Handles BtnSub.Click, BtnMultiplie.Click, BtnDivide.Click, BtnAdd.Click
+        ' Hantera alla operator click
+        Dim b As Button = sender
+        If (assign_input <> 0) Then
+            BtnSum.PerformClick()
+            found_expression = True
+            operation = b.Text
+            lblExpression.Text = assign_input & "   " & operation
+        Else
+            operation = b.Text
+            assign_input = Double.Parse(TxtInput.Text)
+            found_expression = True
+            lblExpression.Text = assign_input & "   " & operation
+        End If
+    End Sub
+
+
+    Private Sub BtnSum_Click(sender As Object, e As EventArgs) Handles BtnSum.Click
+        ' Case för operator vid summa
+        lblExpression.Text = ""
+        Select Case operation
+            Case "+"
+                TxtInput.Text = (assign_input + Double.Parse(TxtInput.Text)).ToString()
+            Case "-"
+                TxtInput.Text = (assign_input - Double.Parse(TxtInput.Text)).ToString()
+            Case "/"
+                TxtInput.Text = (assign_input / Double.Parse(TxtInput.Text)).ToString()
+            Case "*"
+                TxtInput.Text = (assign_input * Double.Parse(TxtInput.Text)).ToString()
+        End Select
+
+        assign_input = Double.Parse(TxtInput.Text)
+        operation = ""
+    End Sub
+
+    ' Lägg till / ta bort decimal
+    Private Sub BtnDot_Click(sender As Object, e As EventArgs) Handles BtnDot.Click
+        If InStr(TxtInput.Text, ","c) = 0 Then
+            TxtInput.Text = TxtInput.Text & ","
+        End If
+
+        If InStr(TxtInput.Text, ","c) > 0 Then
+            ' här ska vi ta bort decimal om det redan finns en...
+
+        End If
+    End Sub
+
+    ' Ändra från och till negativt tal
+    Private Sub BtnChange_Click(sender As Object, e As EventArgs) Handles BtnChange.Click
+        If TxtInput.Text.StartsWith("-"c) Then
+            TxtInput.Text = Mid(TxtInput.Text, 2)
+        Else
+            TxtInput.Text = "-" & TxtInput.Text
+        End If
+        TxtInput.Select(TxtInput.Text.Length, 0)
+    End Sub
+
+    ' Hantering av tangetbord
     Private Sub TxtInput_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtInput.KeyPress
         'GÄLLER ENDAST INPUT MED TBORD
         'Tillåta siffror, backspace och.
@@ -31,142 +116,6 @@
 
     End Sub
 
-    Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
-        'User slected the add button
-        [operator] = 1
-        'Convert into a number and transfer the value from
-        'The text box on the form into the first number
-
-        tal1 = Val(TxtInput.Text)
 
 
-        TxtInput.Text = ""
-    End Sub
-
-    Private Sub BtnSub_Click(sender As Object, e As EventArgs) Handles BtnSub.Click
-        [operator] = 2
-        'Convert into a number and transfer the value from
-        'The text box on the form into the first number
-        tal1 = Val(TxtInput.Text)
-        TxtInput.Text = ""
-    End Sub
-
-    Private Sub BtnDivide_Click(sender As Object, e As EventArgs) Handles BtnDivide.Click
-        'User slected the Divide button
-        [operator] = 4
-        'Convert into a number and transfer the value from
-        'The text box on the form into the first number
-        tal1 = Val(TxtInput.Text)
-
-        TxtInput.Text = ""
-    End Sub
-
-    Private Sub BtnMultiplie_Click(sender As Object, e As EventArgs) Handles BtnMultiplie.Click
-        'User slected the multiply button
-        [operator] = 3
-        'Convert into a number and transfer the value from
-        'The text box on the form into the first number
-        tal1 = Val(TxtInput.Text)
-
-        TxtInput.Text = ""
-    End Sub
-
-    Private Sub Btn1_Click(sender As Object, e As EventArgs) Handles Btn1.Click
-        TxtInput.Text = TxtInput.Text & "1"
-    End Sub
-
-    Private Sub Btn2_Click(sender As Object, e As EventArgs) Handles Btn2.Click
-        TxtInput.Text = TxtInput.Text & "2"
-    End Sub
-
-    Private Sub Btn3_Click(sender As Object, e As EventArgs) Handles Btn3.Click
-        TxtInput.Text = TxtInput.Text & "3"
-    End Sub
-
-    Private Sub Btn4_Click(sender As Object, e As EventArgs) Handles Btn4.Click
-        TxtInput.Text = TxtInput.Text & "4"
-    End Sub
-
-    Private Sub Btn5_Click(sender As Object, e As EventArgs) Handles Btn5.Click
-        TxtInput.Text = TxtInput.Text & "5"
-    End Sub
-
-    Private Sub Btn6_Click(sender As Object, e As EventArgs) Handles Btn6.Click
-        TxtInput.Text = TxtInput.Text & "6"
-    End Sub
-
-    Private Sub Btn7_Click(sender As Object, e As EventArgs) Handles Btn7.Click
-        TxtInput.Text = TxtInput.Text & "7"
-    End Sub
-
-    Private Sub Btn8_Click(sender As Object, e As EventArgs) Handles Btn8.Click
-        TxtInput.Text = TxtInput.Text & "8"
-    End Sub
-
-    Private Sub Btn9_Click(sender As Object, e As EventArgs) Handles Btn9.Click
-        TxtInput.Text = TxtInput.Text & "9"
-    End Sub
-
-    Private Sub Btn0_Click(sender As Object, e As EventArgs) Handles Btn0.Click
-        TxtInput.Text = TxtInput.Text & "0"
-    End Sub
-
-    Private Sub BtnDot_Click(sender As Object, e As EventArgs) Handles BtnDot.Click
-        If InStr(TxtInput.Text, "."c) = 0 Then
-            TxtInput.Text = TxtInput.Text & "."
-        End If
-
-        If InStr(TxtInput.Text, "."c) > 0 Then
-            ' här ska vi ta bort decimal om det redan finns en...
-
-        End If
-    End Sub
-
-    Private Sub BtnAC_Click(sender As Object, e As EventArgs) Handles BtnAC.Click
-        [operator] = 0
-        tal1 = 0
-        tal2 = 0
-        TxtInput.Text = ""
-        resultat = Nothing
-    End Sub
-
-    Private Sub BtnSum_Click(sender As Object, e As EventArgs) Handles BtnSum.Click
-        tal2 = Val(TxtInput.Text)
-
-        Select Case [operator]
-            Case Is = 1
-                resultat = tal1 + tal2
-            Case Is = 2
-                resultat = tal1 - tal2
-            Case Is = 3
-                resultat = tal1 * tal2
-            Case Is = 4
-                resultat = tal1 / tal2
-        End Select
-        TxtInput.Text = resultat
-    End Sub
-
-    Private Sub BtnChange_Click(sender As Object, e As EventArgs) Handles BtnChange.Click
-        Dim MINUSVALUE
-        'Sign state = false on load of form
-        If TxtInput.Text = "-" & TxtInput.Text Then
-            MsgBox("error start again")
-        End If
-        If negativt = False Then
-            TxtInput.Text = "-" & TxtInput.Text
-            negativt = True
-        Else
-            'SignState = True
-
-            MINUSVALUE = Val(TxtInput.Text)
-            'Value now positive
-            MINUSVALUE = Val("-1" * MINUSVALUE)
-            TxtInput.Text = MINUSVALUE
-            negativt = False
-        End If
-    End Sub
-
-    Private Sub BtnC_Click(sender As Object, e As EventArgs) Handles BtnC.Click
-        TxtInput.Text = ""
-    End Sub
 End Class

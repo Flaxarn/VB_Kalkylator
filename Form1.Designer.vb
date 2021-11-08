@@ -42,11 +42,12 @@ Partial Class Form1
         Me.BtnDivide = New System.Windows.Forms.Button()
         Me.BtnAC = New System.Windows.Forms.Button()
         Me.TxtInput = New System.Windows.Forms.TextBox()
+        Me.lblExpression = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Btn7
         '
-        Me.Btn7.Location = New System.Drawing.Point(12, 58)
+        Me.Btn7.Location = New System.Drawing.Point(21, 98)
         Me.Btn7.Name = "Btn7"
         Me.Btn7.Size = New System.Drawing.Size(50, 50)
         Me.Btn7.TabIndex = 0
@@ -55,7 +56,7 @@ Partial Class Form1
         '
         'Btn8
         '
-        Me.Btn8.Location = New System.Drawing.Point(68, 58)
+        Me.Btn8.Location = New System.Drawing.Point(77, 98)
         Me.Btn8.Name = "Btn8"
         Me.Btn8.Size = New System.Drawing.Size(50, 50)
         Me.Btn8.TabIndex = 1
@@ -64,7 +65,7 @@ Partial Class Form1
         '
         'Btn9
         '
-        Me.Btn9.Location = New System.Drawing.Point(124, 58)
+        Me.Btn9.Location = New System.Drawing.Point(133, 98)
         Me.Btn9.Name = "Btn9"
         Me.Btn9.Size = New System.Drawing.Size(50, 50)
         Me.Btn9.TabIndex = 2
@@ -73,7 +74,7 @@ Partial Class Form1
         '
         'Btn4
         '
-        Me.Btn4.Location = New System.Drawing.Point(12, 114)
+        Me.Btn4.Location = New System.Drawing.Point(21, 154)
         Me.Btn4.Name = "Btn4"
         Me.Btn4.Size = New System.Drawing.Size(50, 50)
         Me.Btn4.TabIndex = 3
@@ -82,7 +83,7 @@ Partial Class Form1
         '
         'Btn5
         '
-        Me.Btn5.Location = New System.Drawing.Point(68, 114)
+        Me.Btn5.Location = New System.Drawing.Point(77, 154)
         Me.Btn5.Name = "Btn5"
         Me.Btn5.Size = New System.Drawing.Size(50, 50)
         Me.Btn5.TabIndex = 4
@@ -91,7 +92,7 @@ Partial Class Form1
         '
         'Btn6
         '
-        Me.Btn6.Location = New System.Drawing.Point(124, 114)
+        Me.Btn6.Location = New System.Drawing.Point(133, 154)
         Me.Btn6.Name = "Btn6"
         Me.Btn6.Size = New System.Drawing.Size(50, 50)
         Me.Btn6.TabIndex = 5
@@ -100,7 +101,7 @@ Partial Class Form1
         '
         'Btn1
         '
-        Me.Btn1.Location = New System.Drawing.Point(12, 170)
+        Me.Btn1.Location = New System.Drawing.Point(21, 210)
         Me.Btn1.Name = "Btn1"
         Me.Btn1.Size = New System.Drawing.Size(50, 50)
         Me.Btn1.TabIndex = 6
@@ -109,7 +110,7 @@ Partial Class Form1
         '
         'Btn2
         '
-        Me.Btn2.Location = New System.Drawing.Point(68, 170)
+        Me.Btn2.Location = New System.Drawing.Point(77, 210)
         Me.Btn2.Name = "Btn2"
         Me.Btn2.Size = New System.Drawing.Size(50, 50)
         Me.Btn2.TabIndex = 7
@@ -118,7 +119,7 @@ Partial Class Form1
         '
         'BtnDot
         '
-        Me.BtnDot.Location = New System.Drawing.Point(68, 239)
+        Me.BtnDot.Location = New System.Drawing.Point(77, 279)
         Me.BtnDot.Name = "BtnDot"
         Me.BtnDot.Size = New System.Drawing.Size(50, 50)
         Me.BtnDot.TabIndex = 8
@@ -127,7 +128,7 @@ Partial Class Form1
         '
         'Btn0
         '
-        Me.Btn0.Location = New System.Drawing.Point(12, 239)
+        Me.Btn0.Location = New System.Drawing.Point(21, 279)
         Me.Btn0.Name = "Btn0"
         Me.Btn0.Size = New System.Drawing.Size(50, 50)
         Me.Btn0.TabIndex = 9
@@ -136,7 +137,7 @@ Partial Class Form1
         '
         'Btn3
         '
-        Me.Btn3.Location = New System.Drawing.Point(124, 170)
+        Me.Btn3.Location = New System.Drawing.Point(133, 210)
         Me.Btn3.Name = "Btn3"
         Me.Btn3.Size = New System.Drawing.Size(50, 50)
         Me.Btn3.TabIndex = 10
@@ -145,7 +146,7 @@ Partial Class Form1
         '
         'BtnChange
         '
-        Me.BtnChange.Location = New System.Drawing.Point(124, 239)
+        Me.BtnChange.Location = New System.Drawing.Point(133, 279)
         Me.BtnChange.Name = "BtnChange"
         Me.BtnChange.Size = New System.Drawing.Size(50, 50)
         Me.BtnChange.TabIndex = 11
@@ -154,7 +155,7 @@ Partial Class Form1
         '
         'BtnAdd
         '
-        Me.BtnAdd.Location = New System.Drawing.Point(206, 170)
+        Me.BtnAdd.Location = New System.Drawing.Point(215, 210)
         Me.BtnAdd.Name = "BtnAdd"
         Me.BtnAdd.Size = New System.Drawing.Size(50, 50)
         Me.BtnAdd.TabIndex = 12
@@ -163,7 +164,7 @@ Partial Class Form1
         '
         'BtnSub
         '
-        Me.BtnSub.Location = New System.Drawing.Point(262, 170)
+        Me.BtnSub.Location = New System.Drawing.Point(271, 210)
         Me.BtnSub.Name = "BtnSub"
         Me.BtnSub.Size = New System.Drawing.Size(50, 50)
         Me.BtnSub.TabIndex = 13
@@ -172,7 +173,7 @@ Partial Class Form1
         '
         'BtnMultiplie
         '
-        Me.BtnMultiplie.Location = New System.Drawing.Point(262, 114)
+        Me.BtnMultiplie.Location = New System.Drawing.Point(271, 154)
         Me.BtnMultiplie.Name = "BtnMultiplie"
         Me.BtnMultiplie.Size = New System.Drawing.Size(50, 50)
         Me.BtnMultiplie.TabIndex = 14
@@ -181,7 +182,7 @@ Partial Class Form1
         '
         'BtnC
         '
-        Me.BtnC.Location = New System.Drawing.Point(206, 58)
+        Me.BtnC.Location = New System.Drawing.Point(215, 98)
         Me.BtnC.Name = "BtnC"
         Me.BtnC.Size = New System.Drawing.Size(50, 50)
         Me.BtnC.TabIndex = 15
@@ -190,7 +191,7 @@ Partial Class Form1
         '
         'BtnSum
         '
-        Me.BtnSum.Location = New System.Drawing.Point(206, 239)
+        Me.BtnSum.Location = New System.Drawing.Point(215, 279)
         Me.BtnSum.Name = "BtnSum"
         Me.BtnSum.Size = New System.Drawing.Size(106, 50)
         Me.BtnSum.TabIndex = 16
@@ -199,7 +200,7 @@ Partial Class Form1
         '
         'BtnDivide
         '
-        Me.BtnDivide.Location = New System.Drawing.Point(206, 114)
+        Me.BtnDivide.Location = New System.Drawing.Point(215, 154)
         Me.BtnDivide.Name = "BtnDivide"
         Me.BtnDivide.Size = New System.Drawing.Size(50, 50)
         Me.BtnDivide.TabIndex = 17
@@ -208,7 +209,7 @@ Partial Class Form1
         '
         'BtnAC
         '
-        Me.BtnAC.Location = New System.Drawing.Point(262, 58)
+        Me.BtnAC.Location = New System.Drawing.Point(271, 98)
         Me.BtnAC.Name = "BtnAC"
         Me.BtnAC.Size = New System.Drawing.Size(50, 50)
         Me.BtnAC.TabIndex = 18
@@ -217,17 +218,27 @@ Partial Class Form1
         '
         'TxtInput
         '
-        Me.TxtInput.Location = New System.Drawing.Point(12, 12)
+        Me.TxtInput.Location = New System.Drawing.Point(21, 52)
         Me.TxtInput.Name = "TxtInput"
         Me.TxtInput.Size = New System.Drawing.Size(300, 31)
         Me.TxtInput.TabIndex = 19
+        '
+        'lblExpression
+        '
+        Me.lblExpression.AutoSize = True
+        Me.lblExpression.Location = New System.Drawing.Point(225, 9)
+        Me.lblExpression.Name = "lblExpression"
+        Me.lblExpression.Size = New System.Drawing.Size(96, 25)
+        Me.lblExpression.TabIndex = 20
+        Me.lblExpression.Text = "expression"
         '
         'Form1
         '
         Me.AcceptButton = Me.BtnSum
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(333, 312)
+        Me.ClientSize = New System.Drawing.Size(333, 352)
+        Me.Controls.Add(Me.lblExpression)
         Me.Controls.Add(Me.TxtInput)
         Me.Controls.Add(Me.BtnAC)
         Me.Controls.Add(Me.BtnDivide)
@@ -276,4 +287,5 @@ Partial Class Form1
     Friend WithEvents BtnDivide As Button
     Friend WithEvents BtnAC As Button
     Friend WithEvents TxtInput As TextBox
+    Friend WithEvents lblExpression As Label
 End Class
