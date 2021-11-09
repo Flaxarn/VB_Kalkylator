@@ -99,10 +99,10 @@
             e.Handled = True
         End If
 
-        'Hantera extra . // OBS BLIR FEL MED FLERA NUMMER (ej tbord )
-        If e.KeyChar = "."c And InStr(sender.text, "."c) > 0 Then
-            e.Handled = True
-        End If
+        'Hantera extra . // OBS FUNKAR EJ . skall vara , 
+        'If e.KeyChar = "."c And InStr(sender.text, "."c) > 0 Then
+        'e.Handled = True
+        'End If
 
         'Hantera - tecken // OBS BLIR FEL MED FLERA NUMMER ( ej tbord )
         If e.KeyChar = "-"c Then
